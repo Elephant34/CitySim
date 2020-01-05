@@ -10,6 +10,8 @@ func _ready():
 		
 	globals.save_grid(grid)
 	
+	draw_grid()
+	
 func load_grid():
 	# Opens the game data file to load the values
 
@@ -30,4 +32,20 @@ func load_grid():
 func generate_grid():
 	# Gemerates a new random map
 	
-	return [[1,4,2,8],[4,3,67,3],[35,3,2,4]]
+	var new_grid = []
+	new_grid.resize(100)
+	
+	for column in 100:
+		new_grid[column] = []
+		new_grid[column].resize(100)
+		for row in 100:
+			var tile = globals.rng_generate(0,9)
+			
+			new_grid[column][row] = tile
+	
+	return new_grid
+
+func draw_grid():
+	for column in 100:
+		for row in 100:
+			set_cell(column, row, grid[column][row])

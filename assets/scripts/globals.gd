@@ -1,8 +1,15 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
+func _ready():
+    rng.randomize()
+	
+func rng_generate(_min, _max):
+	return rng.randi_range(_min, _max)
 
 func save_grid(grid):
-	# Stores the game data to a persistant file
+	# Stores the game map to a persistant file
 
 	var grid_save = File.new()
 
