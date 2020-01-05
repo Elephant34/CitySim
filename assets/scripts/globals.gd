@@ -2,6 +2,8 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 
+var map_size = Vector2(110, 110)
+
 func _ready():
     rng.randomize()
 	
