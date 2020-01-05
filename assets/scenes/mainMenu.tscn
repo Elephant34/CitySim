@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="mainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.90001
+margin_bottom = 1.90002

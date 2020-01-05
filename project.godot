@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="City Sim"
 config/icon="res://icon.png"
 
+[autoload]
+
+globals="*res://assets/scripts/globals.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
