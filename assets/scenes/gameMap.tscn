@@ -109,6 +109,3 @@
 tile_set = SubResource( 1 )
 format = 1
 script = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 6630.32, 6389.01 )
