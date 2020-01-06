@@ -23,6 +23,7 @@ func _ready():
 	grid = load_grid()
 	
 	if not grid:
+		print("Generating new grid")
 		grid = generate_grid()
 		
 		globals.save_grid(grid)
@@ -110,6 +111,7 @@ func main_tile():
 	return random_tile
 
 func draw_grid():
+	print("Drawing grid")
 	for column in width:
 		for row in height:
 			set_cell(column, row, grid[column][row])

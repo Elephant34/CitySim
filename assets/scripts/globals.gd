@@ -21,4 +21,6 @@ func save_grid(grid):
 
 	grid_save.close()
 	
+	print("Grid save successful")
+	
 	return

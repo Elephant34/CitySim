@@ -22,6 +22,10 @@ config/icon="res://icon.png"
 
 globals="*res://assets/scripts/globals.gd"
 
+[logging]
+
+file_logging/enable_file_logging=true
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
