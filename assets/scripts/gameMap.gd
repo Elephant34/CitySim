@@ -67,12 +67,47 @@ func generate_grid():
 				# Give beach
 				tile = name_map["Beach"]
 			else:
-				# Fills in main tiles with random areas
-				tile = globals.rng_generate(0,7)
+				tile = main_tile()
 			
 			new_grid[column][row] = tile
 	
 	return new_grid
+
+func main_tile():
+	var tile_prob = {}
+	tile_prob["Grass"] = 140
+	tile_prob["Forest"] = tile_prob["Grass"] + 30
+	tile_prob["Water"] = tile_prob["Forest"] + 5
+	tile_prob["Stone"] = tile_prob["Water"] + 10
+	tile_prob["Coal"] = tile_prob["Stone"] + 10
+	tile_prob["Iron"] = tile_prob["Coal"] + 3
+	tile_prob["Gold"] = tile_prob["Iron"] + 2
+	tile_prob["Gem"] = tile_prob["Gold"] + 1
+
+	
+	var random_tile = globals.rng_generate(0, 199)
+	
+	if 0 <= random_tile and random_tile < tile_prob["Grass"]:
+		random_tile = name_map["Grass"]
+	elif tile_prob["Grass"] <= random_tile and random_tile < tile_prob["Forest"]:
+		random_tile = name_map["Forest"]
+	elif tile_prob["Forest"] <= random_tile and random_tile < tile_prob["Water"]:
+		random_tile = name_map["Water"]
+	elif tile_prob["Water"] <= random_tile and random_tile < tile_prob["Stone"]:
+		random_tile = name_map["Stone"]
+	elif tile_prob["Stone"] <= random_tile and random_tile < tile_prob["Coal"]:
+		random_tile = name_map["Coal"]
+	elif tile_prob["Coal"] <= random_tile and random_tile < tile_prob["Iron"]:
+		random_tile = name_map["Iron"]
+	elif tile_prob["Iron"] <= random_tile and random_tile < tile_prob["Gold"]:
+		random_tile = name_map["Gold"]
+	elif tile_prob["Gold"] <= random_tile and random_tile < tile_prob["Gem"]:
+		random_tile = name_map["Gem"]
+	else:
+		print("Um...")
+		random_tile = name_map["Void"]
+	
+	return random_tile
 
 func draw_grid():
 	for column in width:
